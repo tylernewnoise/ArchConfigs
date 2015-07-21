@@ -1,0 +1,23 @@
+#URxvt.transparent:		true
+URxvt.geometry:			110x28
+URxvt.borderless:		true
+#URxvt.background:		Black
+URxvt.foreground:		Green
+
+#scrollbar
+URxvt.scrollBar:		true
+#URxvt.scrollstyle:		plain
+URxvt.scrollBar_right:	true
+URxvt.secondaryScroll:	true
+
+URxvt.font: 			xft:terminus:size=9:antialias=true
+#URxvt.shading:110
+URxvt.depth: 32
+#URxvt.background: 		rgba:1111/1111/1111/dddd
+#URxvt.background: 		rgba:3f00/3f00/3f00/dddd
+URxvt.background: 		[75]#000000
+
+#colored Manpages
+URxvt.colorIT:      	#87af5f
+URxvt.colorBD:      	#d7d7d7
+URxvt.colorUL:      	#87afd7
