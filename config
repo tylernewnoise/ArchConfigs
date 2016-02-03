@@ -28,23 +28,22 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# start a filemanager
+bindsym XF86Calculator exec urxvt -e ranger
 
 # kill focused window
-#bindsym $mod+Shift+q kill
-bindsym $mod+c kill
+bindsym $mod+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-#bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -l 20"
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+i focus up
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
 bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
@@ -54,23 +53,9 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+j move left
-#bindsym $mod+Shift+k move down
-#bindsym $mod+Shift+l move up
-#bindsym $mod+Shift+odiaeresis move right
-#bindsym $mod+Ctrl+j move left
-#bindsym $mod+Ctrl+k move down
-#bindsym $mod+Ctrl+l move up
-#bindsym $mod+Ctrl+odiaeresis move right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
-bindsym $mod+Ctrl+j move left
-bindsym $mod+Ctrl+k move down
-bindsym $mod+Ctrl+i move up
+bindsym $mod+Ctrl+h move left
+bindsym $mod+Ctrl+j move down
+bindsym $mod+Ctrl+k move up
 bindsym $mod+Ctrl+l move right
 # alternatively, use the cursor keys
 bindsym $mod+Ctrl+Left move left
@@ -79,12 +64,10 @@ bindsym $mod+Ctrl+Up move up
 bindsym $mod+Ctrl+Right move right
 
 # split in horizontal orientation
-#bindsym $mod+h split h
-bindsym $mod+v split h
+bindsym $mod+b split h
 
 # split in vertical orientation
-#bindsym $mod+v split v
-bindsym $mod+b split v
+bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
@@ -104,12 +87,12 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
-
-#workspace 9 output DVI-D-0
+#put workspaces on the second monitor
 workspace 10 output DVI-D-0
-
+workspace 88 output DVI-D-0
+workspace 99 output DVI-D-0
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -122,8 +105,10 @@ bindsym $mod+7 workspace 7
 bindsym $mod+8 workspace 8
 bindsym $mod+9 workspace 9
 bindsym $mod+0 workspace 10
+#100 workspaces
+bindsym $mod+y exec i3-input -F 'workspace %s' -l2 -P 'Goto: '
 
-# move focusedr container to workspace
+# move focused container to workspace
 bindsym $mod+Ctrl+1 move container to workspace 1
 bindsym $mod+Ctrl+2 move container to workspace 2
 bindsym $mod+Ctrl+3 move container to workspace 3
@@ -139,13 +124,10 @@ bindsym $mod+Ctrl+0 move container to workspace 10
 bindsym $mod+Ctrl+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Ctrl+r restart
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Ctrl+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
-
         # Pressing left will shrink the window’s width.
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
@@ -173,7 +155,7 @@ bindsym $mod+r mode "resize"
 bar {
 		id bar-0
 		position top
-		status_command $HOME/.conky/.conkyscript.sh
+		status_command i3blocks -c ~/.i3/i3blocks.conf
 		output DVI-I-1
 		tray_output none
 }
@@ -181,38 +163,39 @@ bar {
 bar {
 		id bar-1
 		position top
+		status_command $HOME/.conky/.conkyscript.sh
 		tray_output DVI-D-0
 		output DVI-D-0
 }
 
-#status_command $HOME/.conky/.conkyscript.sh
 # Modifications:
 # assign programm to a specific workspace
-assign [class="Pidgin"] 10
-assign [class="Thunderbird"] 10
+assign [class="Pidgin"] 99
+assign [class="Thunderbird"] 88
 
 # Switching between workspaces
 bindsym $mod+n workspace prev
 bindsym $mod+m workspace next
-#bindysm $mod+m workspace back_and_forth
 
 # Move workspaces to monitors
 bindsym $mod+p move workspace to output right
 bindsym $mod+o move workspace to output left
 
-# Volume keys
-bindsym XF86AudioMute exec amixer set Master mute
-bindsym XF86AudioLowerVolume exec amixer set Master 2- unmute
-bindsym XF86AudioRaiseVolume exec amixer set Master 2+ unmute
-
-# Fast terminal
-bindsym XF86Calculator exec i3-sensible-terminal
+# Volume keys - alsa only
+#bindsym XF86AudioMute exec amixer set Front mute
+#bindsym XF86AudioLowerVolume exec amixer set Master 1 2- unmute
+#bindsym XF86AudioRaiseVolume exec amixer set Master 1 2+ unmute
+# Volume keys - pulseaudio
+bindsym XF86AudioMute exec pactl set-sink-mute 1 toggle && volnoti-show -m
+bindsym XF86AudioRaiseVolume exec ~/.i3/volnoti.sh up
+bindsym XF86AudioLowerVolume exec ~/.i3/volnoti.sh down
 
 # Autostart
-exec sh ~/.fehbg &
-exec compton --config ~/.compton.conf -b &
+exec nitrogen --restore &
 exec vidalia &
+exec SpiderOak &
 exec osmo &
+exec volnoti &
 # Numlocktaste einschalten
 exec numlockx on &
 # Kein schwarzer Bildschirm nach x-Zeit
@@ -224,7 +207,6 @@ exec setxkbmap -layout de &
 exec xmodmap -e 'add mod3 = Scroll_Lock' &
 
 # Lock X, exit X, suspend, reboot, shutdown
-
 set $Locker i3lock -t -i ~/.config/wallpaper/ch.png && sleep 1
 
 set $mode_system System (l) lock, (e) logout, (r) reboot, (q) shutdown, (s) suspend
@@ -241,3 +223,5 @@ mode "$mode_system" {
 }
 
 bindsym $mod+Pause mode "$mode_system"
+
+# bindsym $mod+Shift+t [class="URxvt"] focus
