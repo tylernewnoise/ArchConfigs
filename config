@@ -40,6 +40,9 @@ bindsym $mod+q kill
 # installed.
 bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu="dmenu -i -l 20"
 
+# no borders
+new_window pixel 2 
+
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -71,6 +74,7 @@ bindsym $mod+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen
+bindsym $mod+Ctrl+f fullscreen toggle global
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
@@ -91,6 +95,7 @@ bindsym $mod+c focus child
 
 #put workspaces on the second monitor
 workspace 10 output DVI-D-0
+workspace 70 output DVI-D-0
 workspace 88 output DVI-D-0
 workspace 99 output DVI-D-0
 
@@ -163,7 +168,7 @@ bar {
 bar {
 		id bar-1
 		position top
-		status_command $HOME/.conky/.conkyscript.sh
+		status_command i3blocks -c ~/.i3/i3blocks2.conf
 		tray_output DVI-D-0
 		output DVI-D-0
 }
@@ -172,6 +177,7 @@ bar {
 # assign programm to a specific workspace
 assign [class="Pidgin"] 99
 assign [class="Thunderbird"] 88
+assign [class="Filezilla"] 70
 
 # Switching between workspaces
 bindsym $mod+n workspace prev
@@ -193,7 +199,6 @@ bindsym XF86AudioLowerVolume exec ~/.i3/volnoti.sh down
 # Autostart
 exec nitrogen --restore &
 exec vidalia &
-exec SpiderOak &
 exec osmo &
 exec volnoti &
 # Numlocktaste einschalten
