@@ -23,13 +23,33 @@ font pango:DejaVu Sans Mono 8
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+
+#TOTEST
+#workspace_auto_back_and_forth yes
+
+# Layout colors           bord      bg    text 
+client.focused #007fbf #007fbf #ffffff
+client.unfocused #666666 #666666 #ffffff
+client.urgent #aa0000 #990000 #ffffff
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+#update
+#bindsym $mod+Shift+u exec termite -e 'yaourt -Syua'
+
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Ctrl+Return exec --no-startup-id termite
+
 # start a filemanager
 bindsym XF86Calculator exec urxvt -e ranger
+
+# take screenshot
+bindsym Print exec scrot '%F--%I:%M:%S:%p--$wx$h--scrot.png' -e 'mv $f ~/temp'
+
+# start glances
+bindsym $mod+Ctrl+Delete exec urxvt -e glances
 
 # kill focused window
 bindsym $mod+q kill
@@ -229,6 +249,5 @@ mode "$mode_system" {
 
 bindsym $mod+Pause mode "$mode_system"
 
-# bindsym $mod+Shift+t [class="URxvt"] focus
-
+# vim: set ft=conf ts=4 sw=4 tw=500 et :
 # vim:filetype=i3
