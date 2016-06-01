@@ -113,38 +113,63 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+c focus child
 
+# variable for workspaces
+set $wsp1 1:
+set $wsp2 2:
+set $wsp3 3:
+set $wsp4 4:
+set $wsp5 5:
+set $wsp6 6:
+set $wsp7 7:
+set $wsp8 8:
+set $wsp9 9:
+set $wsp10 10:
+
 #put workspaces on the second monitor
-workspace 10 output DVI-D-0
-workspace 70 output DVI-D-0
-workspace 88 output DVI-D-0
-workspace 99 output DVI-D-0
+workspace $wsp1 output DVI-I-1
+workspace $wsp2 output DVI-I-1
+workspace $wsp3 output DVI-I-1
+workspace $wsp7 output DVI-D-0
+workspace $wsp8 output DVI-D-0
+workspace $wsp9 output DVI-D-0
+workspace $wsp10 output DVI-D-0
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $wsp1
+bindsym $mod+2 workspace $wsp2
+bindsym $mod+3 workspace $wsp3
+bindsym $mod+4 workspace $wsp4
+bindsym $mod+5 workspace $wsp5
+bindsym $mod+6 workspace $wsp6
+bindsym $mod+7 workspace $wsp7
+bindsym $mod+8 workspace $wsp8
+bindsym $mod+9 workspace $wsp9
+bindsym $mod+0 workspace $wsp10
 #100 workspaces
-bindsym $mod+y exec i3-input -F 'workspace %s' -l2 -P 'Goto: '
+bindsym $mod+y exec i3-input -F 'workspace %s' -l2 -P 'Goto: ' 
 
 # move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace 1
-bindsym $mod+Ctrl+2 move container to workspace 2
-bindsym $mod+Ctrl+3 move container to workspace 3
-bindsym $mod+Ctrl+4 move container to workspace 4
-bindsym $mod+Ctrl+5 move container to workspace 5
-bindsym $mod+Ctrl+6 move container to workspace 6
-bindsym $mod+Ctrl+7 move container to workspace 7
-bindsym $mod+Ctrl+8 move container to workspace 8
-bindsym $mod+Ctrl+9 move container to workspace 9
-bindsym $mod+Ctrl+0 move container to workspace 10
+bindsym $mod+Ctrl+1 move container to workspace $wsp1
+bindsym $mod+Ctrl+2 move container to workspace $wsp2
+bindsym $mod+Ctrl+3 move container to workspace $wsp3
+bindsym $mod+Ctrl+4 move container to workspace $wsp4
+bindsym $mod+Ctrl+5 move container to workspace $wsp5
+bindsym $mod+Ctrl+6 move container to workspace $wsp6
+bindsym $mod+Ctrl+7 move container to workspace $wsp7
+bindsym $mod+Ctrl+8 move container to workspace $wsp8
+bindsym $mod+Ctrl+9 move container to workspace $wsp9
+bindsym $mod+Ctrl+0 move container to workspace $wsp10
 
+# Modifications:
+# assign programm to a specific workspace
+assign [class="Pidgin"] $wsp10
+assign [class="Thunderbird"] $wsp9
+assign [class="Filezilla"] $wsp8
+assign [class="libreoffice"] $wsp7
+
+# Switching between workspaces
+bindsym $mod+n workspace prev
+bindsym $mod+m workspace next
 # reload the configuration file
 bindsym $mod+Ctrl+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -192,16 +217,6 @@ bar {
 		tray_output DVI-D-0
 		output DVI-D-0
 }
-
-# Modifications:
-# assign programm to a specific workspace
-assign [class="Pidgin"] 99
-assign [class="Thunderbird"] 88
-assign [class="Filezilla"] 70
-
-# Switching between workspaces
-bindsym $mod+n workspace prev
-bindsym $mod+m workspace next
 
 # Move workspaces to monitors
 bindsym $mod+p move workspace to output right
