@@ -36,6 +36,7 @@ set tm=500
 syntax enable
 colorscheme monokai
 set encoding=utf8
+set colorcolumn=80
 
 " Text, tab and indent related
 " 1 tab == 6 spaces
