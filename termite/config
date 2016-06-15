@@ -7,8 +7,9 @@ allow_bold = true
 dynamic_title = true
 urgent_on_bell = true
 clickable_url = true
-#font = DejaVu Sans Mono 9
-font = Inconsolata 12
+#font = DejaVu Sans Mono for Powerline 10
+font = Source Code Pro for Powerline 10
+#font = Inconsolata 12
 #font = Monospace 9
 scrollback_lines = 10000
 search_wrap = true
@@ -35,7 +36,7 @@ filter_unmatched_urls = true
 #modify_other_keys = false
 
 [colors]
-#cursor = #dcdccc
+cursor = #ffe755
 foreground = #c5c5c5
 #foreground_bold = #ffffff
 background = #1c1c1c
