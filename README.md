@@ -6,8 +6,9 @@ config files
 * gtk-theme: arc-dark
 * icon-theme: numix
 * terminals: urxvt and termite
+* font in terminals: Source Code Pro
 
-screenshots
+screenshots (not up to date)
 -----------
 
 clean
