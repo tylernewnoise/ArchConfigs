@@ -1,32 +1,42 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+"""" Vundle Setup =====================
+set nocompatible " be iMproved, required
+filetype off     " required
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+
+"""" UI Plugins =======================
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+ let g:airline_powerline_fonts=1
+ let g:airline_skip_empty_sections=1
+ let g:airline_theme='molokai'
+ let g:airline#extensions#branch#enabled = 1
+ set laststatus=2
+ if !exists('g:airline_symbols')
+	 let g:airline_symbols = {}
+ endif
+ let g:airline_symbols.maxlinenr = ''
+ map <F12> :AirlineToggleWhitespace<CR>
 Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+"""" End Vundle ========================
+
+"""" User Interface ===================
+
+set number " Show line numbers
+set cursorline " Show cursorline
+hi CursorLine ctermbg=235
+set colorcolumn=81 " Show a line
+
+set list lcs=tab:\┆\  " Show indentlines
 
 " Sets how many lines of history VIM has to remember
 set history=700
@@ -37,22 +47,13 @@ nmap <leader>w :w!<cr>
 " Fast scorlling
 set lazyredraw
 set ttyfast
+set scrolloff=5 " Start scrolling 5 lines before the border
 
 " Colors and Fonts
 " Enable syntax highlighting
 syntax enable
 colorscheme monokai
 set encoding=utf8
-
-" User Interface
-" Show line numbers
-set number
-" Show cursorline and column
-set cursorline
-set colorcolumn=81
-hi CursorLine ctermbg=235 term=bold cterm=bold
-" Show indentlines. There has to be a whitespace after the second \
-set list lcs=tab:\┆\ 
 
 " Height of the command bar
 set cmdheight=1
@@ -63,6 +64,7 @@ set ruler
 " Highlight search results
 set hlsearch
 set incsearch
+nnoremap <cr> :nohlsearch<cr> " Clear search buffer when hitting return
 
 " No annoying sound on errors
 set noerrorbells
@@ -74,7 +76,6 @@ set tm=500
 " 1 tab == 8 spaces
 set shiftwidth=8
 set tabstop=8
-
 filetype indent on
 set autoindent
 set ai "Auto indent
@@ -85,6 +86,3 @@ set wrap "Wrap lines
 " Always show the status line
 set laststatus=2
 
-" Setup for airline (still testing)
-let g:airline_powerline_fonts=1
-let g:airline_section_a = airline#section#create(['mode',' ','branch','%{strftime("%c")}'])
