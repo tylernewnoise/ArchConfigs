@@ -23,6 +23,17 @@ Plugin 'vim-airline/vim-airline-themes'
  let g:airline_symbols.maxlinenr = ''
  map <F12> :AirlineToggleWhitespace<CR>
 Plugin 'tpope/vim-fugitive'
+Plugin 'scrooloose/nerdtree'
+ map <F3> :NERDTreeToggle<CR>
+Plugin 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
