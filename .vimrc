@@ -30,10 +30,15 @@ filetype plugin indent on    " required
 """" End Vundle ========================
 
 """" User Interface ===================
+" Colors and Fonts
+" Enable syntax highlighting
+syntax enable
+colorscheme monokai
+set encoding=utf8
 
 set number " Show line numbers
 set cursorline " Show cursorline
-hi CursorLine ctermbg=235
+hi CursorLine ctermbg=235 term=bold cterm=bold
 set colorcolumn=81 " Show a line
 
 set list lcs=tab:\┆\  " Show indentlines
@@ -48,12 +53,6 @@ nmap <leader>w :w!<cr>
 set lazyredraw
 set ttyfast
 set scrolloff=5 " Start scrolling 5 lines before the border
-
-" Colors and Fonts
-" Enable syntax highlighting
-syntax enable
-colorscheme monokai
-set encoding=utf8
 
 " Height of the command bar
 set cmdheight=1
