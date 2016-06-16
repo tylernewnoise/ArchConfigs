@@ -8,7 +8,7 @@ config files
 * terminals: urxvt and termite
 * font in terminals: Source Code Pro
 
-screenshots (not up to date)
+screenshots
 -----------
 
 clean
