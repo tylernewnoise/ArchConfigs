@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 """" UI Plugins =======================
+Plugin 'tomasr/molokai'
 """ Airline ---------------------------
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -94,3 +95,7 @@ set autoindent
 set ai "Auto indent
 set si "Smart indent
 set wrap "Wrap lines
+
+" Remove alle trailing whitespaces
+nnoremap <F9> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+
