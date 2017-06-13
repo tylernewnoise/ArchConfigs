@@ -8,6 +8,8 @@ config files
 * terminals: urxvt and termite
 * font in terminals: Source Code Pro
 
+* software.txt - as the name suggests: all the software I currently use (and used in the past)
+
 screenshots
 -----------
 
