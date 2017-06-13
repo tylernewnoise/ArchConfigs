@@ -64,6 +64,7 @@ usb-creator
 valgrind
 vidalia
 viewnior
+vivaldi
 wireshark
 xcfa
 xfburn
@@ -90,7 +91,6 @@ wego
 amule
 bison
 bonnie++
-clion
 codeblocks
 codelite
 compton
