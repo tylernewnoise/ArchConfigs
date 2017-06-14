@@ -1,91 +1,91 @@
 ############# Installed #############
-anki
-arc-dark
-astyle
-asunder
-archey
-avidemux
-brasero
-chromium
-clion
-deadbeaf
-dunst
-filezilla
-firefox
-freefilesync
-galculator
-geany
-git
-gpa
-gparted
-gksu
-grub2
-gsimplecal
-gstreamer
-gthumb
-handbrake
-hardinfo
-i3
-i3bar
-icedtea-web
-idle3tools
-intellij idea
-jdk7-open
-keepassx
-kid3
-libreoffice
-lxappearance
-master pdf editor
-nitrogen
-numix-icons
-onionshare
-pavucontrol
-pcmanfm
-pdfsam
-pidgin
-pinta
-pkgtools
-osmo
-qpdfview
-razercfg
-retorshare
-slack
-smplayer
-spotify
-steam
-syncthing
-termite
-thunderbird
-transmission
-unclutter
-universalunindentgui
-urxvt
-usb-creator
-valgrind
-vidalia
-viewnior
-vivaldi
-wireshark
-xcfa
-xfburn
-zsh
-zulucrypt
+anki (learn stuff with flash cards)
+arc-dark (dark theme)
+astyle (source code formatter)
+asunder (cd ripper)
+archey (system info on terminal)
+avidemux (video edit)
+brasero (burning app)
+chromium (webbrowser)
+clion (IDE for C/C++)
+deadbeaf (audio player)
+dunst (notification-daemon)
+filezilla (ftp client)
+firefox (webbrowser)
+freefilesync (synchronize files and folders)
+galculator (calculator)
+geany (editor)
+git (version control)
+gpa (GnuPG gui)
+gparted (partition manager)
+gksu (su gui)
+grub2 (boot manager)
+gsimplecal (calendar)
+gstreamer (multimedia framework)
+gthumb (image browser)
+handbrake (video transcoder)
+hardinfo (hardware information)
+i3 (window manager)
+i3blocks (show infos in i3bar)
+icedtea-web (java plugin)
+idle3tools (hdd tools)
+intellij idea (IDE for Java)
+jdk7-open (Java)
+keepassx (password manager)
+kid3 (tag editor)
+libreoffice (office suite)
+lxappearance (theme switcher)
+master pdf editor (pdf editor)
+nitrogen (sets background images)
+numix-icons (icon theme)
+onionshare (share files via tor)
+pavucontrol (pulseaudio control)
+pcmanfm (filebrowser)
+pdfsam (pdf editor)
+pidgin (instant messenger client)
+pinta (drawing and editing images)
+pkgtools (scripts for ArchLinux packages)
+osmo (calendar)
+qpdfview (pdf viewer)
+razercfg (configuration tool for razer mouse)
+retorshare (serverless filesharing)
+slack (group messaging)
+smplayer (video player)
+spotify (music streaming)
+steam (timekiller)
+syncthing (serverless file sync)
+termite (terminal emulator)
+thunderbird (email client)
+transmission (bittorrent client)
+unclutter (hiding the mouse cursor)
+universalindentgui (gui for uncrustify etc.)
+urxvt (terminal emulator)
+usb-creator (create bootable USBs)
+valgrind (search for memory leaks)
+vidalia (tor gui)
+viewnior (fast image viewer
+vivaldi (webbrowser)
+wireshark (network analyzer)
+xcfa (audio transcoder)
+xfburn (burning app)
+zsh (shell)
+zulucrypt (crytpsetup gui)
 
 ############# terminal-based  #############
-bitlbee
-cmus
-detox
-fu-git
-glances -> py3sensors
-inxi
-namebench
-ncdu
-nmap
-ponymix
-pv
-ranger -> w3m highlight mediainfo
-weechat
-wego
+bitlbee (maps instant messaging to IRC)
+cmus (audio player)
+detox (clean filenames)
+fu-git (query commandlinefu.com)
+glances -> py3sensors (monitoring tool)
+inxi (system info)
+namebench (DNS benchmark)
+ncdu (show diskusage)
+nmap (network analyzer)
+ponymix (pulseaudio volume control)
+pv (monitor process through pipeline)
+ranger -> w3m highlight mediainfo (filebrowser)
+weechat (IRC client)
+wego (weather app)
 
 ############# once installed (which doesn't mean it was bad!) #############
 amule
