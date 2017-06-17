@@ -15,10 +15,12 @@ firefox (webbrowser)
 freefilesync (synchronize files and folders)
 galculator (calculator)
 geany (editor)
+geequie (image browser)
+gimp (image manupilation)
 git (version control)
+gksu (su gui)
 gpa (GnuPG gui)
 gparted (partition manager)
-gksu (su gui)
 grub2 (boot manager)
 gsimplecal (calendar)
 gstreamer (multimedia framework)
@@ -36,6 +38,7 @@ kid3 (tag editor)
 libreoffice (office suite)
 lxappearance (theme switcher)
 master pdf editor (pdf editor)
+mousepad (text editor)
 nitrogen (sets background images)
 numix-icons (icon theme)
 onionshare (share files via tor)
@@ -64,6 +67,7 @@ usb-creator (create bootable USBs)
 valgrind (search for memory leaks)
 vidalia (tor gui)
 viewnior (fast image viewer
+vim (text editor)
 vivaldi (webbrowser)
 wireshark (network analyzer)
 xcfa (audio transcoder)
@@ -88,35 +92,32 @@ weechat (IRC client)
 wego (weather app)
 
 ############# once installed (which doesn't mean it was bad!) #############
-amule
-bison
-bonnie++
-codeblocks
-codelite
-compton
-conky
-eclipse
-ekiga
-feh
-flex
-ffmulticonverter
-gimp
-gogglesm
-gtk-theme-flatstudio
-jdownloader
-jitsi
-keepassc
-midori
-obconf
-obmenu
-openbox
-rtorrent
-spideroak
-tint2
-tint2-wizard
-tty-clock
-unison
-volnoti
-wine
-xchat
-zukitwo-themes
+amule (filesharing client)
+bonnie++ (hdd benchmark)
+codeblocks (IDE)
+codelite (IDE)
+compton (composite manager)
+conky (display system info)
+eclipse (IDE)
+ekiga (messenger)
+feh (image viewer)
+ffmulticonverter (audio converter)
+gogglesm (audio player)
+gtk-theme-flatstudio (theme)
+jdownloader (download manager)
+jitsi (messenger)
+keepassc (password manager)
+midori (webbrowser)
+obconf (openbox config manager)
+obmenu (openbox menu manager)
+openbox (window manager)
+rtorrent (bittorrent client)
+spideroak (file sync)
+tint2 (task manager)
+tint2-wizard (tint2 config manager)
+tty-clock (terminal clock)
+unison (file sync)
+volnoti (volume display script)
+wine (windows emulator)
+xchat (irc client)
+zukitwo-themes (theme)
