@@ -1,0 +1,35 @@
+#! /bin/bash
+
+
+if [ -z "$1" ]; then
+	printf 'No HDD entered, these are available: \n'
+	lsblk
+	exit
+fi
+
+HDD=$1
+
+sudo cryptsetup --type luks open /dev/$HDD $HDD
+#enter passphrase
+
+# mounting
+# first get the label name
+#MOUNTPOINT=$(blkid /dev/mapper/$HDD | awk '{print $2 }' | cut -f2 -d"\"")
+
+#printf 'Und der Mountpoint ist: %s. \n' $MOUNTPOINT
+
+#mkdir /home/tyler/Data/Enc/$MOUNTPOINT
+
+#sudo mount /dev/mapper/$HDD /home/tyler/Data/Enc/$MOUNTPOINT
+
+
+
+
+
+
+
+
+# unmount
+#sudo umount /home/tyler/Data/Enc/$MOUNTPOINT
+# rm -r /home/tyler/Data/Enc/$MOUNTPOINT
+#cryptsetup close HDD$1 
