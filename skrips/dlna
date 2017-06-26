@@ -1,0 +1,57 @@
+#! /bin/bash
+
+# start, stop and update minidlna without typing too much
+
+DIRECTORYMOVIES=/run/media/tyler/data1/movies
+DIRECTORYSHOWS=/run/media/tyler/data3/data/serien
+DIRECTORYPICS=/run/media/tyler/data3/data/Bilder/canonixus
+
+# kill minidlna if argument is k
+if [ "$1" = k ]; then
+	if [ ! -f /home/tyler/.config/minidlna/minidlna.pid ]; then
+		printf 'minidlna is not running!\n'
+		exit
+	fi
+	printf 'Killing minidlna process\n'
+	killall minidlnad
+	exit
+fi
+
+# check if database has to be updated on argument r
+if [ "$1" = r ]; then
+	if [ ! -f "/home/tyler/.config/minidlna/minidlna.pid" ]; then
+		printf 'minidlna is not running, starting the daemon...\n'
+		minidlnad -f /home/tyler/.config/minidlna/minidlna.conf -P /home/tyler/.config/minidlna/minidlna.pid
+	fi
+	printf 'Updating database...\n'
+	minidlnad -R
+	STATUS=""
+	STATUS_NEW=""
+	while : ; do
+		STATUS=$(curl -s  localhost:8200)
+		sleep 1
+		STATUS_NEW=$(curl -s localhost:8200)
+		printf '*'
+		[[ "$STATUS" != "$STATUS_NEW" ]] || break
+	done
+	printf '\nDatabase up to date. Daemon running.\n'
+	exit
+fi
+
+if [ -d "$DIRECTORYMOVIES" ] || [ -d "$DIRECTORYSHOWS"] || [-d "$DIRECTORYPICS"] ; then
+	if [ -d "$DIRECTORYMOVIES" ]; then
+		printf 'Found directory with movies.\n'
+	fi
+	if [ -d "$DIRECTORYSHOWS" ]; then
+		printf 'Found directory with shows.\n'
+	fi
+	if [ -d "$DIRECTORYPICS" ]; then
+		printf 'Found directory with pics.\n'
+	fi
+	minidlnad -f /home/tyler/.config/minidlna/minidlna.conf -P /home/tyler/.config/minidlna/minidlna.pid
+	exit
+else
+	printf 'No Mediadirectories found! Exiting\n'
+	exit
+fi
+
