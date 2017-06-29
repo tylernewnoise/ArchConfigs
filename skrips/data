@@ -1,35 +1,113 @@
 #! /bin/bash
+# This skript is supposed to make it a bit easier to mount and unmount encrypted
+# luks-devices from the commandline. It is possible to mount and unmount
+# unencrypted devices as well. It's quite simple and fits my needs, but if you
+# can use it for you as well - go ahead and give the bastard a shot.
+# Any advices for improvement are very welcome.
 
+HDD=$2
+RETVAL=0;
 
-if [ -z "$1" ]; then
-	printf 'No HDD entered, these are available: \n'
+# data or data -s: show available disks and their mountpoints via lsblk
+show() {
+	printf 'Available HDDs: \n'
 	lsblk
-	exit
-fi
+	RETVAL=0
+}
 
-HDD=$1
+# check if given device exists
+checkmount() {
+	if [[ ! ${#HDD} -eq 4 ]]; then
+		printf 'Input needs to be a mountable partiton!\n'
+		exit 1
+	fi
 
-sudo cryptsetup --type luks open /dev/$HDD $HDD
-#enter passphrase
+	if ! lsblk | grep -q $HDD ; then
+		printf 'Partition not found! \n'
+		exit 1
+	fi
+}
 
-# mounting
-# first get the label name
-#MOUNTPOINT=$(blkid /dev/mapper/$HDD | awk '{print $2 }' | cut -f2 -d"\"")
+# data -d sdx: mount encrypted
+decrypt() {
+	printf 'Decrypting...\n'
+	udisksctl unlock -b /dev/$HDD # decrypt device
+	# get the luksid
+	MOUNTPOINT=$(udisksctl dump | grep -A20 -m1 $HDD | grep -A20 -m1 'CryptoBackingDevice' | grep 'PreferredDevice' | awk '{print $2}')
+	# mount the device with the luksid
+	udiskctl mount -b /dev/mapper/$MOUNTPOINT
+	RETVAL=0
+}
 
-#printf 'Und der Mountpoint ist: %s. \n' $MOUNTPOINT
+# data -m sdx: mount a filesystem by its device name
+mount() {
+	udisksctl mount -b /dev/$HDD
+	RETVAL=0
+}
 
-#mkdir /home/tyler/Data/Enc/$MOUNTPOINT
+# check if the given mountpoint exists
+checkunmount() {
+	if ! udisksctl dump | grep $HDD | grep -q 'MountPoints' ;then
+		printf 'Mountpoint not found!\n'
+		exit 1
+	fi
+}
 
-#sudo mount /dev/mapper/$HDD /home/tyler/Data/Enc/$MOUNTPOINT
+# data -m ID: unount filesystem
+unmount() {
+	MOUNTPOINT=$(udisksctl dump | grep -A7 -m1 $HDD | grep -A7 -m1 'IdLabel' |  grep 'PreferredDevice' | awk '{print $2}')
+	udisksctl unmount -b $MOUNTPOINT
+	RETVAL=0
+}
 
+# data -e ID: encrypt (aka unmount) device
+encrypt() {
+	# first, get the uuid. we need this to get the exakt device name
+	UUID=$(udisksctl dump | grep -B1 -m1 $HDD | grep 'by-id-dm-name-luks' | awk '{print $2}')
+	UUID=${UUID#'by-id-dm-name-luks-'}
+	unmount
+	# get the device name from the uuid
+	HDD=$(udisksctl dump | grep -A5 $UUID | grep -A5 'IdUUID' | grep '/dev/sd' | awk '{print $2}')
+	udisksctl lock -b $HDD
+	RETVAL=0
+}
 
+f1() {
+	printf 'Usage: data OPTION DEVICE|MOUNTPOINT\n\n'
+	printf '\t -s, --show [DEVICE] show available devices via lsblk\n'
+	printf '\t -d, --decrypt [DEVICE] decrypt and mount an available luks filesystem\n'
+	printf '\t -e, --encrypt [MOUNTPOINT] unmount and encrypt a decrypted luks filesysten\n'
+	printf '\t -m, --mount [DEVICE] mount an available filesystem\n'
+	printf '\t -u, --unmount [MOUNTPOINT] unmount filesystem\n\n'
+	RETVAL=0
+}
 
+case "$1" in
+	-s|--show)
+		show
+		;;
+	-d|--decrypt)
+		checkmount
+		decrypt
+		;;
+	-e|--encrypt)
+		checkunmount
+		encrypt
+		;;
+	-m|--mount)
+		checkmount
+		mount
+		;;
+	-u|--unmount)
+		checkunmount
+		unmount
+		;;
+	-h|--help)
+		f1
+		;;
+	*)
+		show
+		printf '\nUse data -h oder data --help to get more info.\n'
+esac
 
-
-
-
-
-# unmount
-#sudo umount /home/tyler/Data/Enc/$MOUNTPOINT
-# rm -r /home/tyler/Data/Enc/$MOUNTPOINT
-#cryptsetup close HDD$1 
+exit $RETVAL
