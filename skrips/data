@@ -34,7 +34,7 @@ decrypt() {
 	# get the luksid
 	MOUNTPOINT=$(udisksctl dump | grep -A20 -m1 $HDD | grep -A20 -m1 'CryptoBackingDevice' | grep 'PreferredDevice' | awk '{print $2}')
 	# mount the device with the luksid
-	udisksctl mount -b /dev/mapper/$MOUNTPOINT
+	udisksctl mount -b $MOUNTPOINT
 	RETVAL=0
 }
 
