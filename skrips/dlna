@@ -23,7 +23,8 @@ update(){
 		minidlnad -f /home/tyler/.config/minidlna/minidlna.conf -P /home/tyler/.config/minidlna/minidlna.pid
 	fi
 	printf 'Updating database...\n'
-	minidlnad -R
+	#rm /home/tyler/.config/minidlna/cache/files.db
+	minidlnad -f /home/tyler/.config/minidlna/minidlna.conf -P /home/tyler/.config/minidlna/minidlna.pid
 	STATUS=""
 	STATUS_NEW=""
 	while : ; do
