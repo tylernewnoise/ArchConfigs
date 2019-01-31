@@ -17,10 +17,22 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 # Use the provided interface, otherwise the device used for the default route.
-if [[ -n $BLOCK_INSTANCE ]]; then
-  INTERFACE=$BLOCK_INSTANCE
-else
-  INTERFACE=$(ip route | awk '/^default/ { print $5 ; exit }')
+#if [[ -n $BLOCK_INSTANCE ]]; then
+  #INTERFACE=$BLOCK_INSTANCE
+#else
+  #INTERFACE=$(ip route | awk '/^default/ { print $5 ; exit }')
+#fi
+
+INTERFACE=enp0s31f6
+
+if ip link show | grep wlp61s0 | grep -oP '(?<=state ).*' | grep -q 'UP'
+then
+	INTERFACE=wlp61s0
+fi
+
+if ip link show | grep enp11s0u1 | grep -oP '(?<=state ).*' | grep -q 'UP'
+then
+	INTERFACE=enp11s0u1
 fi
 
 # Issue #36 compliant.
@@ -71,6 +83,7 @@ tx_rate=$(( $tx_diff / $time_diff ))
 
 # incoming
 echo -n ""
+#echo -n "I "
 rx_kib=$(( $rx_rate >> 10 ))
 if [[ "$rx_rate" -gt 1048576 ]]; then
   printf '%sM' "`echo "scale=1; $rx_kib / 1024" | bc`"
@@ -82,6 +95,7 @@ echo -n " "
 
 # outgoing
 echo -n ""
+#echo -n "O "
 tx_kib=$(( $tx_rate >> 10 ))
 if [[ "$tx_rate" -gt 1048576 ]]; then
   printf '%sM' "`echo "scale=1; $tx_kib / 1024" | bc`"

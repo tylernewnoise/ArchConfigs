@@ -1,0 +1,32 @@
+#! /bin/bash
+
+# got this from here: https://tech.x4343.org/posts/2014/12/some-i3wm-settings/
+# modified for my pulse audio needs and other icons
+
+if [ "$1" == "low" ]; then
+	amixer -c 0 sset Master 5%-
+	ICON="/usr/share/icons/Faenza-Dark/status/16/audio-volume-low.png"
+	TEXT=$(amixer -c 0 -M -D pulse get Master | grep -E '^\s+Front Left' | cut -c 29-35 | grep -o -P '\d+%')
+elif [ "$1" == "high" ]; then
+	amixer -c 0 sset Master 5%+
+	ICON="/usr/share/icons/Faenza-Dark/status/16/audio-volume-medium.png"
+	TEXT=$(amixer -c 0 -M -D pulse get Master | grep -E '^\s+Front Left' | cut -c 29-35 | grep -o -P '\d+%')
+elif [ "$1" == "mute" ]; then
+	pactl set-sink-mute 0 toggle
+	ICON="/usr/share/icons/Faenza-Dark/status/16/audio-volume-high.png"
+	TEXT=$(amixer -c 0 -M -D pulse get Master | grep -E '^\s+Front Left' | cut -c 37-38)
+	if [ "$TEXT" == "of" ]; then
+		TEXT="off"
+		ICON="/usr/share/icons/Faenza-Dark/status/16/audio-volume-off.png"
+	fi
+else
+	echo "Usage volume [low | high | mute]\n"
+fi
+
+ID=$(cat ~/.i3/.dunst_volume)
+if [ $ID -gt "0" ]; then
+	dunstify -p -r $ID -i $ICON "Volume: $TEXT" > ~/.i3/.dunst_volume
+else
+	dunstify -p -i $ICON "Volume: $TEXT" > ~/.i3/.dunst_volume
+fi
+
