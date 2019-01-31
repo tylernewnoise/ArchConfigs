@@ -1,94 +1,107 @@
-############# Installed #############
-anki (learn stuff with flash cards)
-arc-dark (dark theme)
-astyle (source code formatter)
-asunder (cd ripper)
-archey (system info on terminal)
-avidemux (video edit)
-brasero (burning app)
-chromium (webbrowser)
-clion (IDE for C/C++)
-deadbeaf (audio player)
-dunst (notification-daemon)
-filezilla (ftp client)
-firefox (webbrowser)
-freefilesync (synchronize files and folders)
-galculator (calculator)
-geany (editor)
-geequie (image browser)
-gimp (image manupilation)
-git (version control)
+e############ Installed #############
+android-file-transfer-linux (android mtp client)
+anki (learn stuff with flash cards) y
+arandr (moni tool) y
+arc-dark (dark theme) y
+autorandr (moni tool) y
+avidemux (video edit) y
+chromium (webbrowser) y
+clion (IDE for C/C++) y
+deadbeaf (audio player) y
+dunst (notification-daemon) y
+filezilla (ftp client) y
+firefox (webbrowser) y
+galculator (calculator) y
+geany (editor) y
+gimp (image manupilation) y
+git (version control) y
 gksu (su gui)
-gpa (GnuPG gui)
-gparted (partition manager)
-grub2 (boot manager)
-gsimplecal (calendar)
-gstreamer (multimedia framework)
-gthumb (image browser)
-handbrake (video transcoder)
-hardinfo (hardware information)
-i3 (window manager)
-i3blocks (show infos in i3bar)
-icedtea-web (java plugin)
-idle3tools (hdd tools)
-intellij idea (IDE for Java)
-jdk8-open (Java)
-keepassx (password manager)
-kid3 (tag editor)
-libreoffice (office suite)
-lxappearance (theme switcher)
-master pdf editor (pdf editor)
-mousepad (text editor)
-nitrogen (sets background images)
-numix-icons (icon theme)
-onionshare (share files via tor)
-openshot (video edit)
-pavucontrol (pulseaudio control)
-pcmanfm (filebrowser)
-pdfsam (pdf editor)
-pidgin (instant messenger client)
-pinta (drawing and editing images)
-pkgtools (scripts for ArchLinux packages)
-pycharm (IDE for python)
-osmo (calendar)
-qpdfview (pdf viewer)
+gpa (GnuPG gui) y
+gparted (partition manager) y
+gsimplecal (calendar) y
+gthumb (image browser) y
+handbrake (video transcoder) y
+hardinfo (hardware information) y
+i3blocks (show infos in i3bar) y
+intellij idea (IDE for Java) y
+keepassx (password manager) y
+kid3 (tag editor) y
+libreoffice (office suite) y
+lxappearance (theme switcher) y
+master pdf editor (pdf editor) y
+midori (webbrowser) y
+nitrogen (sets background images) y
+openshot (video edit) y
+pavucontrol (pulseaudio control) y
+pcmanfm (filebrowser) y
+pdfsam (pdf editor) y
+pidgin (instant messenger client) y
+pinta (drawing and editing images) y
+pycharm (IDE for python) y
+osmo (calendar) y
+qpdfview (pdf viewer) y
 razercfg (configuration tool for razer mouse)
-retorshare (serverless filesharing)
-slack (group messaging)
-spotify (music streaming)
-syncthing (serverless file sync)
-termite (terminal emulator)
-thunderbird (email client)
-transmission (bittorrent client)
-unclutter (hiding the mouse cursor)
-universalindentgui (gui for uncrustify etc.)
-urxvt (terminal emulator)
-usb-creator (create bootable USBs)
-valgrind (search for memory leaks)
-vidalia (tor gui)
-viewnior (fast image viewer
-vim (text editor)
-vivaldi (webbrowser)
-wireshark (network analyzer)
-xcfa (audio transcoder)
-xfburn (burning app)
-zsh (shell)
-zulucrypt (crytpsetup gui)
+slack (group messaging) y
+spotify (music streaming) y
+st (terminal emulator) y
+termite (terminal emulator) y
+tor-browser (webbroser) y
+torguard (vpn client) y
+thunderbird (email client) y
+transmission (bittorrent client) y
+udiskie (mount helper) y
+valgrind (search for memory leaks) y
+viewnior (fast image viewer y
+vim (text editor) y
+wireshark (network analyzer) y
+xcfa (audio transcoder) y
 
 ############# terminal-based  #############
-bitlbee (maps instant messaging to IRC)
-cmus (audio player)
-detox (clean filenames)
-fu-git (query commandlinefu.com)
-glances -> py3sensors (monitoring tool)
-inxi (system info)
-namebench (DNS benchmark)
-ncdu (show diskusage)
+archey (system info on terminal) y
+cmus (audio player) y
+detox (clean filenames) y
+glances -> py3sensors (monitoring tool) y
+inxi (system info) y
+ncdu (show diskusage) y
+ncpamixer (pulseaudio volume control) y
 nmap (network analyzer)
-ponymix (pulseaudio volume control)
+ranger -> w3m highlight mediainfo (filebrowser) y
+s-tui (system-monitor) y
+speedtest-cli (speedtest) y
+youtube-dl (youtube downloader) y
+
+############ system #################
+autorandr
+bolt (tb3 dev manager)
+gstreamer (multimedia framework) y
+i3 (window manager) y
+jdk-open (Java) y
+numix-icons (icon theme) y
+pacman-contrib
+pkgtools (scripts for ArchLinux packages) y
+powertop y
+profile-sync-daemon y
+unclutter (hiding the mouse cursor) y
+reflector y
+zsh (shell) y
+
+############# maybe laterz ###############
+astyle (source code formatter)
+asunder (cd ripper)
+brasero (burning app)
+etcher (usb-creator)
+geequie (image browser)
+icedtea-web (java plugin)
+idle3tools (hdd tools)
+onionshare (share files via tor)
+universalindentgui (gui for uncrustify etc.)
+-------
+bitlbee (maps instant messaging to IRC)
+fu-git (query commandlinefu.com)
+namebench (DNS benchmark)
 pv (monitor process through pipeline)
-ranger -> w3m highlight mediainfo (filebrowser)
 weechat (IRC client)
+
 
 ############# once installed (which doesn't mean it was bad!) #############
 amule (filesharing client)
@@ -101,25 +114,35 @@ eclipse (IDE)
 ekiga (messenger)
 feh (image viewer)
 ffmulticonverter (audio converter)
+freefilesync (synchronize files and folders)
 gogglesm (audio player)
 gtk-theme-flatstudio (theme)
+grub2 (boot manager)
 jdownloader (download manager)
 jitsi (messenger)
 keepassc (password manager)
-midori (webbrowser)
+mousepad (text editor)
 obconf (openbox config manager)
 obmenu (openbox menu manager)
 openbox (window manager)
 rtorrent (bittorrent client)
+retorshare (serverless filesharing)
 smplayer (video player)
 spideroak (file sync)
 steam (timekiller)
+syncthing (serverless file sync)
 tint2 (task manager)
 tint2-wizard (tint2 config manager)
 tty-clock (terminal clock)
 unison (file sync)
+urxvt (terminal emulator)
+usb-creator (create bootable USBs)
+vidalia (tor gui)
+vivaldi (webbrowser)
 volnoti (volume display script)
 wego (weather app)
 wine (windows emulator)
 xchat (irc client)
+xfburn (burning app)
 zukitwo-themes (theme)
+zulucrypt (crytpsetup gui)
