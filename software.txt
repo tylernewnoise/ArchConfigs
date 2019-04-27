@@ -1,95 +1,97 @@
 e############ Installed #############
 android-file-transfer-linux (android mtp client)
-anki (learn stuff with flash cards) y
-arandr (moni tool) y
-arc-dark (dark theme) y
-autorandr (moni tool) y
-avidemux (video edit) y
-chromium (webbrowser) y
-clion (IDE for C/C++) y
-deadbeaf (audio player) y
-dunst (notification-daemon) y
-filezilla (ftp client) y
-firefox (webbrowser) y
-galculator (calculator) y
-geany (editor) y
-gimp (image manupilation) y
-git (version control) y
-gksu (su gui)
-gpa (GnuPG gui) y
-gparted (partition manager) y
-gsimplecal (calendar) y
-gthumb (image browser) y
-handbrake (video transcoder) y
-hardinfo (hardware information) y
-i3blocks (show infos in i3bar) y
-intellij idea (IDE for Java) y
-keepassx (password manager) y
-kid3 (tag editor) y
-libreoffice (office suite) y
-lxappearance (theme switcher) y
-master pdf editor (pdf editor) y
-midori (webbrowser) y
-nitrogen (sets background images) y
-openshot (video edit) y
-pavucontrol (pulseaudio control) y
-pcmanfm (filebrowser) y
-pdfsam (pdf editor) y
-pidgin (instant messenger client) y
-pinta (drawing and editing images) y
-pycharm (IDE for python) y
-osmo (calendar) y
-qpdfview (pdf viewer) y
+anki (learn stuff with flash cards)
+arandr (moni tool)
+arc-dark (dark theme)
+autorandr (moni tool)
+avidemux (video edit)
+chromium (webbrowser)
+clion (IDE for C/C++)
+deadbeaf (audio player)
+dunst (notification-daemon)
+etcher (usb-creator)
+filezilla (ftp client)
+firefox (webbrowser)
+galculator (calculator)
+geany (editor)
+gimp (image manupilation)
+git (version control)
+gpa (GnuPG gui)
+gparted (partition manager)
+gsimplecal (calendar)
+gthumb (image browser)
+handbrake (video transcoder)
+hardinfo (hardware information)
+i3blocks (show infos in i3bar)
+intellij idea (IDE for Java)
+keepassx (password manager)
+kid3 (tag editor)
+libreoffice (office suite)
+lxappearance (theme switcher)
+master pdf editor (pdf editor)
+midori (webbrowser)
+nitrogen (sets background images)
+openshot (video edit)
+pavucontrol (pulseaudio control)
+pcmanfm (filebrowser)
+pdfsam (pdf editor)
+pidgin (instant messenger client)
+pinta (drawing and editing images)
+pycharm (IDE for python)
+osmo (calendar)
+qpdfview (pdf viewer)
 razercfg (configuration tool for razer mouse)
-slack (group messaging) y
-spotify (music streaming) y
-st (terminal emulator) y
-termite (terminal emulator) y
-tor-browser (webbroser) y
-torguard (vpn client) y
-thunderbird (email client) y
-transmission (bittorrent client) y
-udiskie (mount helper) y
-valgrind (search for memory leaks) y
-viewnior (fast image viewer y
-vim (text editor) y
-wireshark (network analyzer) y
-xcfa (audio transcoder) y
+renderdoc (vulkan tool)
+slack (group messaging)
+spotify (music streaming)
+st (terminal emulator)
+steam (timekiller)
+termite (terminal emulator)
+tor-browser (webbroser)
+torguard (vpn client)
+thunderbird (email client)
+transmission (bittorrent client)
+udiskie (mount helper)
+valgrind (search for memory leaks)
+viewnior (fast image viewer)
+vim (text editor)
+wireshark (network analyzer)
+xcfa (audio transcoder)
 
 ############# terminal-based  #############
-archey (system info on terminal) y
-cmus (audio player) y
-detox (clean filenames) y
-glances -> py3sensors (monitoring tool) y
-inxi (system info) y
-ncdu (show diskusage) y
-ncpamixer (pulseaudio volume control) y
+archey (system info on terminal)
+bmon (network monitor)
+cmus (audio player)
+detox (clean filenames)
+glances -> py3sensors (monitoring tool)
+inxi (system info)
+ncdu (show diskusage)
+ncpamixer (pulseaudio volume control)
 nmap (network analyzer)
-ranger -> w3m highlight mediainfo (filebrowser) y
-s-tui (system-monitor) y
-speedtest-cli (speedtest) y
-youtube-dl (youtube downloader) y
+ranger -> w3m highlight mediainfo (filebrowser)
+s-tui (system-monitor)
+speedtest-cli (speedtest)
+youtube-dl (youtube downloader)
 
 ############ system #################
-autorandr
+autorandr (auto resolution profiler)
 bolt (tb3 dev manager)
-gstreamer (multimedia framework) y
-i3 (window manager) y
-jdk-open (Java) y
-numix-icons (icon theme) y
-pacman-contrib
-pkgtools (scripts for ArchLinux packages) y
-powertop y
-profile-sync-daemon y
-unclutter (hiding the mouse cursor) y
-reflector y
-zsh (shell) y
+gstreamer (multimedia framework)
+i3 (window manager)
+jdk-open (Java)
+numix-icons (icon theme)
+pacman-contrib (pacman stats)
+pkgtools (scripts for ArchLinux packages)
+powertop (power save tool)
+profile-sync-daemon (firefox in ramdisk)
+unclutter (hiding the mouse cursor)
+reflector (get latest mirrors)
+zsh (shell)
 
 ############# maybe laterz ###############
 astyle (source code formatter)
 asunder (cd ripper)
 brasero (burning app)
-etcher (usb-creator)
 geequie (image browser)
 icedtea-web (java plugin)
 idle3tools (hdd tools)
@@ -115,6 +117,7 @@ ekiga (messenger)
 feh (image viewer)
 ffmulticonverter (audio converter)
 freefilesync (synchronize files and folders)
+gksu (su gui)
 gogglesm (audio player)
 gtk-theme-flatstudio (theme)
 grub2 (boot manager)
@@ -129,7 +132,6 @@ rtorrent (bittorrent client)
 retorshare (serverless filesharing)
 smplayer (video player)
 spideroak (file sync)
-steam (timekiller)
 syncthing (serverless file sync)
 tint2 (task manager)
 tint2-wizard (tint2 config manager)
@@ -146,3 +148,4 @@ xchat (irc client)
 xfburn (burning app)
 zukitwo-themes (theme)
 zulucrypt (crytpsetup gui)
+
