@@ -10,7 +10,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 """" UI Plugins =======================
-Plugin 'tomasr/molokai'
 """ Airline ---------------------------
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -73,7 +72,7 @@ nmap <leader>w :w!<cr>
 " Fast scorlling
 set lazyredraw
 set ttyfast
-set scrolloff=5 " Start scrolling 5 lines before the border
+set scrolloff=25 " Start scrolling 5 lines before the border
 
 " Highlight search results
 set hlsearch
@@ -87,10 +86,12 @@ set t_vb=
 set tm=500
 
 " Text, tab and indent related
-" 1 tab == 8 spaces
-set shiftwidth=8
-set tabstop=8
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
+set expandtab
 filetype indent on
+filetype plugin on
 set autoindent
 set ai "Auto indent
 set si "Smart indent
