@@ -261,12 +261,8 @@ exec --no-startup-id nm-applet &
 # exec --no-startup-id osmo &
 exec --no-startup-id dunst &
 exec --no-startup-id xset -b &
-# set backlight
-exec --no-startup-id xbacklight -set 40 &
-# disable touchpad
-# exec --no-startup-id xinput --disable 9 &
-# turn on numlock key
-exec --no-startup-id numlockx on &
+exec --no-startup-id xbacklight -set 40 & # set backlight
+exec --no-startup-id numlockx on & # turn on numlock key
 exec --no-startup-id autorandr --change &
 exec --no-startup-id sleep 2 && nitrogen --restore &
 exec --no-startup-id ~/.skripts/disableTouchpad &
