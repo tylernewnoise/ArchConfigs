@@ -10,12 +10,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 """" UI Plugins =======================
+Plugin 'morhetz/gruvbox'
+let g:gruvbox_contrast_dark='hard'
 """ Airline ---------------------------
 Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts=1
 let g:airline_skip_empty_sections=1
-let g:airline_theme='molokai'
+let g:airline_theme='gruvbox'
 let g:airline_extensions = ['branch', 'syntastic', 'whitespace']
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 set laststatus=2
@@ -52,7 +54,8 @@ filetype plugin indent on    " required
 " Colors and Fonts
 " Enable syntax highlighting
 syntax enable
-colorscheme monokai
+colorscheme gruvbox
+set bg=dark
 set encoding=utf8
 
 set number " Show line numbers
