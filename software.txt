@@ -75,6 +75,7 @@ speedtest-cli (speedtest)
 youtube-dl (youtube downloader)
 
 ############ system #################
+acpiligth (xbacklight replacement)
 autorandr (auto resolution profiler)
 bolt (tb3 dev manager)
 gstreamer (multimedia framework)
