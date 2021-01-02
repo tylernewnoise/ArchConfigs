@@ -1,7 +1,7 @@
 e############ Installed #############
-arandr (moni tool)
+arandr (screen tool)
 arc-dark (dark theme)
-autorandr (moni tool)
+autorandr (screen tool)
 chromium (webbrowser)
 clion (IDE for C/C++)
 deadbeaf (audio player)
@@ -12,7 +12,6 @@ galculator (calculator)
 geany (editor)
 gimp (image manupilation)
 git (version control)
-gpa (GnuPG gui) TODO
 gparted (partition manager)
 gsimplecal (calendar)
 gthumb (image browser)
@@ -25,7 +24,6 @@ libreoffice (office suite)
 lxappearance (theme switcher)
 mkvtoolnix (mkv manupilation)
 nitrogen (sets background images)
-openshot (video edit) TODO
 pavucontrol (pulseaudio control)
 pcmanfm [gvfs-mtp/smb] (filebrowser)
 pdfsam (pdf editor)
@@ -34,7 +32,6 @@ pinta (manupilating images)
 pycharm (IDE for python)
 osmo (calendar)
 qpdfview (pdf viewer)
-razercfg (configuration tool for razer mouse) TODO
 renderdoc (vulkan tool)
 slack (group messaging)
 spotify (music streaming)
@@ -49,22 +46,21 @@ udiskie (mount helper)
 unison (file sync)
 valgrind (search for memory leaks)
 viewnior (fast image viewer)
-xcfa (audio transcoder) TODO
 
 ############# terminal-based  #############
-archey (system info on terminal) TODO
+archey3 (system info on terminal)
 bmon (network monitor)
 bpytop (monitoring tool)
 cava (audio visualization)
 cmus (audio player)
-detox (clean filenames) TODO
-glances -> py3sensors (monitoring tool) TODO
+detox (clean filenames)
+glances -> py3sensors (monitoring tool)
 htop (system monitor)
 inxi (system info)
 ncdu (show diskusage)
 ncpamixer (pulseaudio volume control)
 nmap (network analyzer)
-ranger -> w3m highlight mediainfo (filebrowser) TODO
+ranger -> w3m highlight mediainfo (filebrowser)
 s-tui (system-monitor)
 speedtest-cli (speedtest)
 vim (text editor)
@@ -77,14 +73,14 @@ docker (container virtualization)
 gstreamer (multimedia framework) TODO
 i3 (window manager)
 j4-dmenu (applications launcher)
-jdk-open (Java) TODO
+jdk-open (Java)
 numix-icons (icon theme)
-pacman-contrib (pacman stats) TODO
-pkgtools (scripts for ArchLinux packages) TODO
-profile-sync-daemon (browser in ramdisk) TODO
+pacman-contrib (pacman stats)
+pkgtools (scripts for ArchLinux packages)
 reflector (get latest mirrors)
 rofi (applications launcher)
 unclutter (hiding the mouse cursor)
+yay (helper for ArchLinux AUR)
 zsh (shell)
 
 ############# maybe laterz ###############
@@ -93,11 +89,16 @@ asunder (cd ripper)
 avidemux (video edit)
 brasero (burning app)
 geequie (image browser)
+gpa (GnuPG gui)
 icedtea-web (java plugin)
 idle3tools (hdd tools)
 onionshare (share files via tor)
+openshot (video edit)
+profile-sync-daemon (browser in ramdisk)
+razercfg (configuration tool for razer mouse)
 universalindentgui (gui for uncrustify etc.)
 wireshark (network analyzer)
+xcfa (audio transcoder)
 -------
 bitlbee (maps instant messaging to IRC)
 fu-git (query commandlinefu.com)
