@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# get sink
+SINK=1
+SINK=$(pamixer --list-sinks | grep Matisse | awk '{print $1}')
+if [ $(pamixer --list-sinks | wc -l) -gt 2 ]; then
+    pamixer --sink $SINK -m # mute headphones
+    SINK=$(pamixer --list-sinks | grep TEAC | awk '{print $1}')
+fi
+
+# got this from the original i3blocks script
+# https://github.com/vivien/i3blocks/blob/1.4.x/scripts/volume#L64
+case $BLOCK_BUTTON in
+  3) pamixer --sink $SINK -t ;; # right click, mute/unmute
+  4) pamixer --sink $SINK --unmute --increase 5 ;; # scroll up, increase
+  5) pamixer --sink $SINK --unmute --decrease 5 ;; # scroll down, decrease
+esac
+
+# get mute/unmute status
+MUTE=off
+GETMUTE=$(pamixer --sink $SINK --get-mute)
+if [ "$GETMUTE" == "false" ]; then
+    MUTE=on
+fi
+
+# get volume
+VOLUME=$(pamixer --sink $SINK --get-volume)
+
+printf '%s%% %s' "${VOLUME}" "${MUTE}"
+
