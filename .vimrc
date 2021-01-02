@@ -70,7 +70,10 @@ set cmdheight=1 " Height of the command bar
 set history=700
 
 " Fast saving
+let mapleader = (' ')
+" let mapleader = ","
 nmap <leader>w :w!<cr>
+nmap <leader>q :qa!<cr>
 
 " Fast scorlling
 set lazyredraw
@@ -80,7 +83,8 @@ set scrolloff=25 " Start scrolling 5 lines before the border
 " Highlight search results
 set hlsearch
 set incsearch
-nnoremap <cr> :nohlsearch<cr> " Clear search buffer when hitting return
+" Clear search buffer when hitting return
+nnoremap <cr> :nohlsearch<cr>
 
 " No annoying sound on errors
 set noerrorbells

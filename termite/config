@@ -14,7 +14,8 @@ scroll_on_keystroke = true
 scrollback_lines = 10000
 search_wrap = true
 urgent_on_bell = true
-font = Source Code Pro for Powerline 10
+# font = Source Code Pro for Powerline 10
+font = Source Code Pro 10
 #hyperlinks = false
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
