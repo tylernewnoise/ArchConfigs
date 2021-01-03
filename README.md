@@ -15,6 +15,6 @@ config files
 
 screenshots
 -----------
-dirty
+dirty (I never use it that way, it's just a show-off)
 
 ![Dirty Desktop](screenshots/fakedirty.jpg)
