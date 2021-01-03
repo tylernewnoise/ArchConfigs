@@ -15,11 +15,6 @@ config files
 
 screenshots
 -----------
-
-clean
-
-![Clean Desktop](screenshots/clean.jpg)
-
 dirty
 
 ![Dirty Desktop](screenshots/fakedirty.jpg)
