@@ -7,7 +7,7 @@ config files
 * icon-theme: numix
 * terminals: st and termite
 * font in terminals: Source Code Pro
-* cava and zathura themes from [here](urxvt://github.com/lokesh-krishna/dotfiles)
+* cava and zathura themes from [here](http://github.com/lokesh-krishna/dotfiles)
 
 * software.txt - as the name suggests: all the software I currently use (and
   used in the past)
