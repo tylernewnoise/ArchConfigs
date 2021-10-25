@@ -12,12 +12,13 @@ Plugin 'VundleVim/Vundle.vim'
 """" UI Plugins =======================
 Plugin 'morhetz/gruvbox'
 let g:gruvbox_contrast_dark='hard'
+Plugin 'arcticicestudio/nord-vim'
 """ Airline ---------------------------
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline_powerline_fonts=1
 let g:airline_skip_empty_sections=1
-let g:airline_theme='gruvbox'
+let g:airline_theme='nord'
 let g:airline_extensions = ['branch', 'syntastic', 'whitespace']
 let g:airline#extensions#whitespace#mixed_indent_algo = 1
 set laststatus=2
@@ -25,8 +26,9 @@ if !exists('g:airline_symbols')
 	let g:airline_symbols={}
 endif
 let g:airline_symbols.maxlinenr=''
+
 map <F12> :AirlineToggleWhitespace<CR>
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 
 """" NERDTree -------------------------
 Plugin 'scrooloose/nerdtree'
@@ -54,8 +56,9 @@ filetype plugin indent on    " required
 " Colors and Fonts
 " Enable syntax highlighting
 syntax enable
-colorscheme gruvbox
-set bg=dark
+"colorscheme gruvbox
+colorscheme nord
+"set bg=dark
 set encoding=utf8
 
 set number " Show line numbers
